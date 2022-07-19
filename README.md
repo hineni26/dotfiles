@@ -1,7 +1,7 @@
 # dotfiles
 These are my config files for my daily driver(I use arch btw). Some standard stuff, feel free to use it.
 
-#Contents
+# Contents
 
 ---What are dotfiles?
    dotfiles are config files for applications on linux/UNIX based operating systems. You can identify dotfiles when they have a dot/period in front of them making them hidden.
