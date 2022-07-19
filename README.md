@@ -7,7 +7,7 @@ These are my config files for my daily driver(I use arch btw). Some standard stu
 -dotfiles are config files for applications on linux/UNIX based operating systems. You can identify dotfiles when they have a dot/period in front of them making them hidden.
 
 # My Window Manager configs(currently I only have one ;) )
--qtile
+- qtile
 
 # Other configs
 - fish(My shell of choice)
