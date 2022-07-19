@@ -10,7 +10,7 @@ set -U fish_user_paths $HOME/.local/bin $HOME/Applications $fish_user_paths
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
 set EDITOR "vim "                                 # $EDITOR use vim in terminal
-set VISUAL "code"              # $VISUAL use Emacs in GUI mode
+set VISUAL "code"                                 # $VISUAL use code in GUI mode
 
 ### SET MANPAGER
 ### Uncomment only one of these!
@@ -188,7 +188,6 @@ alias newtag='git tag -a'
 # switch between shells
 # I do not recommend switching default SHELL from bash.
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 # the terminal rickroll
