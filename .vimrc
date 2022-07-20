@@ -13,8 +13,8 @@ set hidden                      " Needed to keep multiple buffers open
 set nobackup                    " No auto backups
 set noswapfile                  " No swap
 set t_Co=256                    " Set if term supports 256 colors.
-set number relativenumber       " Display line numbers
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
+set nu                          " Set line number
 syntax enable
 let g:rehash256 = 1
 
@@ -33,10 +33,10 @@ let g:lightline = {
       \ }
 
 " Always show statusline
-"set laststatus=2
+set laststatus=2
 
 " Uncomment to prevent non-normal modes showing in powerline and below powerline.
-set noshowmode
+" set noshowmode
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related

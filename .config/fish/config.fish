@@ -185,6 +185,9 @@ alias push='git push origin'
 alias tag='git tag'
 alias newtag='git tag -a'
 
+# nvim
+# alias vim='nvim'
+
 # switch between shells
 # I do not recommend switching default SHELL from bash.
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
