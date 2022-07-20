@@ -4,6 +4,25 @@ filetype off                  " required
 " see :h vundle for more details or wiki for FAQ
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vundle For Managing Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set rtp+=~/.vim/plugged/bundle/Vundle.vim "Sets run type path to Vundle.vim
+
+" Plugins
+call vundle#begin('~/.vim/plugged') 
+
+Plugin 'VundleVim/Vundle.vim'           "vundle
+Plugin 'itchyny/lightline.vim'          "lightline
+
+
+call vundle#end()
+
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set path+=**					" Searches current directory recursively.
@@ -36,7 +55,7 @@ let g:lightline = {
 set laststatus=2
 
 " Uncomment to prevent non-normal modes showing in powerline and below powerline.
-" set noshowmode
+set noshowmode
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -93,20 +112,6 @@ highlight Function         ctermfg=1    ctermbg=none    cterm=none
 " highlight htmlEndTag       ctermfg=114     ctermbg=none    cterm=none
 " highlight xmlEndTag        ctermfg=114     ctermbg=none    cterm=none
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VimWiki
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim-Instant-Markdown
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:instant_markdown_autostart = 0         " Turns off auto preview
-let g:instant_markdown_browser = "surf"      " Uses surf for preview
-map <Leader>md :InstantMarkdownPreview<CR>   " Previews .md file
-map <Leader>ms :InstantMarkdownStop<CR>      " Kills the preview
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Open terminal inside Vim
