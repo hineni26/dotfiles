@@ -87,9 +87,6 @@ ex ()
 
 ### ALIASES ###
 
-# root privileges
-alias doas="doas --"
-
 # navigation
 up () {
   local d=""
