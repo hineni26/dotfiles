@@ -15,7 +15,8 @@ These are my config files for my daily driver(I use arch btw). Some standard stu
 - alacritty(My terminal of choice)
 - picom(A compositor)
 - rofi(A run laucher)
-- vim(My preferred text editor)
+- vim(A text editor)
+- neovim(My preferred text edit)
 
 # Who am I?
 -  have been wondering that myself.
