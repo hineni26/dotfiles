@@ -19,7 +19,7 @@ myFileManager="pcmanfm"    # My File manager of choice
 keys = [
          ### The essentials
          Key([mod], "Return",
-             lazy.spawn(myTerm),
+             lazy.spawn(myTerm+" -e fish"),
              desc='Launches My Terminal'
              ),
          Key([mod, "shift"], "Return",
@@ -33,14 +33,6 @@ keys = [
          Key([mod], "e",
              lazy.spawn(myFileManager),
              desc='pcmanfm'
-             ),
-         Key([mod], "Print",
-             lazy.spawn("/home/ahan/Screenshot/screenshot.sh"),
-             desc='Screenshot'
-             ),
-         Key([mod, "shift"], "Print",
-             lazy.spawn("maim -s | xclip -selection clipboard -t image/png"),
-             desc='Screenshot a portion selected'
              ),
          Key([mod], "Tab",
              lazy.next_layout(),
