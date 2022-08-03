@@ -1,43 +1,53 @@
 #!/bin/bash
+
 # baraction.sh for spectrwm status bar
+# https://github.com/conformal/spectrwm
 
-## DISK
-hdd() {
-  hdd="$(df -h | awk 'NR==4{print $3, $5}')"
-  echo -e "HDD: $hdd"
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
+
+icon() {
+    echo -n "+@fg=1;$1+@fg=0;"
 }
 
-## RAM
-mem() {
-  mem=`free | awk '/Mem/ {printf "%dM/%dM\n", $3 / 1024.0, $2 / 1024.0 }'`
-  echo -e "$mem"
+percentage() {
+    current=`echo $1 | sed 's/%//'`
+    if [ $current -le 25 ]; then 
+        echo -n "$(icon $2)"
+    elif [ $current -le 50 ]; then
+        echo -n "$(icon $3)"
+    elif [ $current -le 75 ]; then
+        echo -n "$(icon $4)"
+    else
+        echo -n "$(icon $5)"
+    fi
 }
 
-## CPU
-cpu() {
-  read cpu a b c previdle rest < /proc/stat
-  prevtotal=$((a+b+c+previdle))
-  sleep 0.5
-  read cpu a b c idle rest < /proc/stat
-  total=$((a+b+c+idle))
-  cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
-  echo -e "CPU: $cpu%"
-}
-
-## VOLUME
-vol() {
-    vol=`amixer get Master | awk -F'[][]' 'END{ print $4":"$2 }' | sed 's/on://g'`
-    echo -e "VOL: $vol"
-}
-
-SLEEP_SEC=3
-#loops forever outputting a line every SLEEP_SEC secs
-
-# It seems that we are limited to how many characters can be displayed via
-# the baraction script output. And the the markup tags count in that limit.
-# So I would love to add more functions to this script but it makes the 
-# echo output too long to display correctly.
+sleep_sec=2
+i=0
 while :; do
-    echo "+@fg=1; +@fn=0;+@fn=0; $(cpu) +@fg=0; | +@fg=2; +@fn=0;+@fn=0; $(mem) +@fg=0; | +@fg=3; +@fn=0;+@fn=0; $(hdd) +@fg=0; | +@fg=4; +@fn=0;+@fn=0; $(vol) +@fg=0; |"
-	sleep $SLEEP_SEC
+    # Updates
+    if (( $i % 60 == 0 )); then
+        updates=`checkupdates | wc -l`
+    fi
+    echo -n "$(icon  ) $updates "
+
+    # Volume
+    vol=`pamixer --get-volume`
+    if [[ `pamixer --get-mute` == "true" ]]; then
+        echo -n "$(icon ﱝ ) $vol% "
+    else
+        echo -n "$(percentage $vol   奔 墳   ) $vol% "
+    fi
+
+
+    # Date
+    if (( $i % 60 == 0 )); then
+        dte="$(date +"$(icon  ) %A, %B %d $(icon  ) %r")"
+    fi
+    echo -e "$dte"
+
+	sleep $sleep_sec
+    (( i += $sleep_sec ))
 done
