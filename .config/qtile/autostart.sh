@@ -1,9 +1,7 @@
 #!/usr/bin/env bash 
 
 lxsession &
-picom &
-#Xtreme Download manager
-xdman -m &
+picom --experimental-backends &
 #Volume
 volumeicon &
 #Network-Manager-Applet

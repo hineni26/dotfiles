@@ -11,10 +11,10 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from typing import List  # noqa: F401from typing import List  # noqa: F401
 
-mod = "mod4"              # Sets mod key to SUPER/WINDOWS
-myTerm = "alacritty"      # My terminal of choice
-myBrowser = "brave"       # My browser of choice
-myFileManager="pcmanfm"    # My File manager of choice
+mod = "mod4"                  # Sets mod key to SUPER/WINDOWS
+myTerm = "alacritty"          # My terminal of choice
+myBrowser = "brave"           # My browser of choice
+myFileManager = "pcmanfm"     # My File manager of choice
 
 keys = [
          ### The essentials
@@ -141,15 +141,15 @@ layout_theme = {"border_width": 2,
                 }
 
 layouts = [
-    #layout.MonadWide(**layout_theme),
-    #layout.Bsp(**layout_theme),
-    #layout.Stack(stacks=2, **layout_theme),
-    #layout.Columns(**layout_theme),
-    #layout.RatioTile(**layout_theme),
-    #layout.Tile(shift_windows=True, **layout_theme),
-    #layout.VerticalTile(**layout_theme),
-    #layout.Matrix(**layout_theme),
-    #layout.Zoomy(**layout_theme),
+    layout.MonadWide(**layout_theme),
+    layout.Bsp(**layout_theme),
+    layout.Stack(stacks=2, **layout_theme),
+    layout.Columns(**layout_theme),
+    layout.RatioTile(**layout_theme),
+    layout.Tile(shift_windows=True, **layout_theme),
+    layout.VerticalTile(**layout_theme),
+    layout.Matrix(**layout_theme),
+    layout.Zoomy(**layout_theme),
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
     layout.Stack(num_stacks=2),
@@ -271,10 +271,6 @@ def init_widgets_list():
                        background = colors[0],
                        padding = 0
                        ),
-              widget.Systray(
-                       background = colors[0],
-                       padding = 5
-                       ),
               widget.Sep(
                        linewidth = 0,
                        padding = 6,
@@ -321,7 +317,7 @@ def init_widgets_list():
                        fontsize = 25
                        ),
               widget.CheckUpdates(
-                       update_interval = 300,
+                       update_interval = 1800,
                        distro = "Arch_checkupdates",
                        display_format = "Updates: {updates} ",
                        foreground = colors[1],
@@ -397,6 +393,24 @@ def init_widgets_list():
                        background = colors[9],
                        format = "%A, %B %d - %r "
                        ),
+              widget.TextBox(
+                       text='',
+                       font = "Ubuntu Mono",
+                       background = colors[9],
+                       foreground = colors[0],
+                       fontsize = 22,
+                       padding = 0
+                       ),
+              widget.Sep(
+                       linewidth = 0,
+                       padding = 6,
+                       foreground = colors[0],
+                       background = colors[0]
+                       ),
+              widget.Systray(
+                       background = colors[0],
+                       padding = 5
+                       ),
               ]
     return widgets_list
 def init_widgets_screen1():
@@ -433,7 +447,6 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='Qalculate!'),         # qalculate-gtk
     Match(wm_class='xdman-Main'),      # xdman
     Match(wm_class='stacer'),          # stacer
-    Match(wm_class='pinentry-gtk-2'),  # GPG key password entry
 ])
 
 auto_fullscreen = True
