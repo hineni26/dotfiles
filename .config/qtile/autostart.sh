@@ -1,6 +1,7 @@
 #!/usr/bin/env bash 
 
 lxsession &
+#Compositor
 picom --experimental-backends &
 #Volume
 volumeicon &
