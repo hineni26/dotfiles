@@ -11,7 +11,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from typing import List  # noqa: F401from typing import List  # noqa: F401
 
-mod = "mod4"                  # Sets mod key to SUPER/WINDOWS
+mod = "mod1"                  # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"          # My terminal of choice
 myBrowser = "brave"           # My browser of choice
 myFileManager = "pcmanfm"     # My File manager of choice
@@ -132,7 +132,7 @@ groups = [Group(" 1 ", layout='monadtall'),
 # MOD4 + index Number : Switch to Group[index]
 # MOD4 + shift + index Number : Send active window to another Group
 from libqtile.dgroups import simple_key_binder
-dgroups_key_binder = simple_key_binder("mod4")
+dgroups_key_binder = simple_key_binder("mod1")
 
 layout_theme = {"border_width": 2,
                 "margin": 8,

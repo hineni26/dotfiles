@@ -182,7 +182,7 @@ set fillchars+=vert:\
 " => Other Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:python_highlight_all = 1
-let g:rainbow_active = 1
+"let g:rainbow_active = 1
 
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
@@ -192,4 +192,3 @@ set guifont=SauceCodePro\ Nerd\ Font:h15
 "set guifont=JetBrains\ Mono:h15
 
 "let g:neovide_transparency=0.95
-
