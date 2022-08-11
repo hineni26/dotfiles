@@ -11,7 +11,6 @@ These are my config files for my daily driver(I use arch btw). Some standard stu
 - spectrwm
 - leftwm
 - hyprwm
-- i3
 
 # Other configs
 - fish(My shell of choice)
