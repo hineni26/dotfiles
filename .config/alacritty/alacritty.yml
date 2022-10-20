@@ -44,7 +44,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.90
+  opacity: 0.95
   #opacity: 0.90
 
   # Window decorations
@@ -273,7 +273,7 @@ schemes:
       focused_match:
         foreground: '#44475a'
         background: '#ffb86c'
-      bar:
+      colors.foot_bar:
         background: '#282a36'
         foreground: '#f8f8f2'
     line_indicator:
