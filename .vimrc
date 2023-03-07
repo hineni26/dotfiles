@@ -17,6 +17,7 @@ Plugin 'itchyny/lightline.vim'          "lightline
 Plugin 'frazrepo/vim-rainbow'           "vim-rainbow
 Plugin 'preservim/nerdtree'             "nerdtree
 Plugin 'vim-python/python-syntax'       "Python highlighting
+Plugin 'neoclide/coc.nvim'              "Coc
 
 call vundle#end()
 
